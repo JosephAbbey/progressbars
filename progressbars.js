@@ -4,7 +4,7 @@ function drawBar(where, size, type, bg, c1, c2, endval) {
     canvas.setup = async function() {
       if (type == 'circle') {
         canvas.createCanvas(25 / 32 * size, 25 / 32 * size);
-        size = 3 / 4 * width;
+        size = 3 / 4 * size;
         canvas.translate(canvas.width / 2, canvas.height / 2);
         for (var i = 0; i < endval + 1; i++) {
           canvas.clear();
