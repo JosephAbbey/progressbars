@@ -3,7 +3,7 @@ function drawBar(where, size, type, bg, c1, c2, endval) {
   const Bar = (canvas) => {
     canvas.setup = async function() {
       if (type == 'circle') {
-        canvas.createCanvas(size, size);
+        canvas.createCanvas(size * 2, size * 2);
         size = 3 / 4 * size;
         canvas.translate(canvas.width / 2, canvas.height / 2);
         for (var i = 0; i < endval + 1; i++) {
