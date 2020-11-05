@@ -7,7 +7,7 @@ https://editor.p5js.org/JosephAbbey/sketches/gi3OCXuCF
 ## Usage:
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-<script src="https://raw.githubusercontent.com/JosephAbbey/progressbars/main/progressbars.js"></script>
+<script src="https://josephabbey.github.io/progressbars/progressbars.js"></script>
 ```
 
 ## Examples:
