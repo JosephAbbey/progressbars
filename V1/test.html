@@ -1,0 +1,34 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div id="canvas1"></div>
+		<div id="canvas2"></div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+		<script src="progressbars.min.js"></script>
+		<script>
+			function setup() {
+				drawBar(
+					'canvas1',
+					400,
+					'circle',
+					255,
+					color(0, 0, 0),
+					color(255, 0, 0),
+					50
+				);
+				drawBar(
+					'canvas2',
+					400,
+					'line',
+					255,
+					color(255, 0, 0),
+					color(255, 255, 0),
+					70
+				);
+			}
+		</script>
+	</body>
+</html>
