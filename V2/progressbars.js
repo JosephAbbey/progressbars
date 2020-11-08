@@ -19,6 +19,7 @@ class color {
 		} else {
 			console.error('Invalid color constructors.');
 		}
+		this.canvas;
 	}
 }
 
@@ -132,6 +133,91 @@ class progressBar {
 				}
 			};
 		};
-		new p5(Bar, this.where);
+		this.canvas = new p5(Bar, this.where);
+	}
+
+	update(newval) {
+		function lerpColor(c1, c2, amt) {
+			return new color(
+				map(amt, 0, 1, c1.r, c2.r),
+				map(amt, 0, 1, c1.g, c2.g),
+				map(amt, 0, 1, c1.b, c2.b)
+			);
+		}
+
+		function map(X, A, B, C, D) {
+			var Y = ((X - A) / (B - A)) * (D - C) + C;
+			return Y;
+		}
+
+		function sleep(ms) {
+			return new Promise((resolve) => setTimeout(resolve, ms));
+		}
+
+		if (this.size == '') {
+			this.size = document.getElementById(this.where).offsetWidth;
+		}
+		var input = this;
+		const Bar = (canvas) => {
+			canvas.setup = async function () {
+				if (input.type == 'circle') {
+					input.size = (3 / 4) * input.size;
+					canvas.translate(canvas.width / 2, canvas.height / 2);
+					for (var i = input.endval; i < newval + 1; i++) {
+						canvas.background(input.bg.r, input.bg.g, input.bg.b);
+						canvas.noFill();
+						canvas.stroke(0, 20);
+						canvas.strokeWeight(5);
+						canvas.ellipse(0, 0, input.size);
+						canvas.strokeWeight(10);
+						var c = lerpColor(input.c1, input.c2, i / 100);
+						canvas.stroke(c.r, c.g, c.b);
+						canvas.angleMode(p5.DEGREES);
+						canvas.arc(
+							0,
+							0,
+							input.size,
+							input.size,
+							-90 / 55,
+							map(i, 0, 100, -90, 270) / 55
+						);
+						canvas.textAlign(p5.CENTER);
+						canvas.textSize(input.size / 7);
+						canvas.noStroke();
+						canvas.fill(0);
+						canvas.text(i + '%', 0, 0);
+						await sleep(input.time / input.endval);
+					}
+				} else if (input.type == 'line') {
+					canvas.createCanvas((25 / 32) * input.size, 12);
+					input.size = (3 / 4) * input.size;
+					canvas.translate(canvas.width / 2, canvas.height / 2);
+					for (var j = input.endval; j < newval + 1; i++) {
+						canvas.background(input.bg.r, input.bg.g, input.bg.b);
+						canvas.noFill();
+						canvas.stroke(0, 20);
+						canvas.strokeWeight(5);
+						canvas.line(
+							0 - input.size / 2,
+							0,
+							0 + input.size / 2,
+							0
+						);
+						canvas.strokeWeight(10);
+						var c = lerpColor(input.c1, input.c2, i / 100);
+						canvas.stroke(c.r, c.g, c.b);
+						canvas.line(
+							0 - input.size / 2,
+							0,
+							j * (input.size / 100) - input.size / 2,
+							0
+						);
+						await sleep(input.time / input.endval);
+					}
+				}
+			};
+		};
+		this.canvas = new p5(Bar, this.where);
+		this.endval = newval;
 	}
 }
