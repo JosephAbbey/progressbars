@@ -5,14 +5,30 @@ Open source progress bar library migrated to not use p5.js.
 ## Usage:
 
 ```
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-<script src="https://josephabbey.github.io/progressbars/V2/progressbars.js"></script>
+<script src="https://josephabbey.github.io/progressbars/V3/progressbars.min.js"></script>
 ```
 
 ## Examples:
 
 ```
-drawBar('canvas1', 400, 'circle', 255, color(0, 0, 0), color(255, 0, 0), 50);
-drawBar('canvas2', 400, 'line', 255, color(255, 0, 0), color(255, 255, 0), 70);
-drawBar('canvas3', 400, 'circle', 255, color(0, 0, 0), color(255, 0, 0), 50); //Uses the full length of it's parent div tag.
+var bar1 = new progressBar({
+  where: 'canvas1',
+  type: 'circle',
+  background: new color(255),
+  color1: new color('#ff0000'),
+  color2: new color(00, 00, 255),
+  endval: 80,
+  time: 800,
+});
+bar1.draw();
+var bar2 = new progressBar({
+  where: 'canvas2',
+  type: 'line',
+  background: new color(255),
+  color1: new color('#ff00ff'),
+  color2: new color('#ff0000'),
+  endval: 50,
+  time: 500,
+});
+bar2.draw();
 ```
