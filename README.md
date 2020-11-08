@@ -8,4 +8,4 @@ Open source progress bar library.
 Check each version for usage instructions.
 
 ## Versions:
-### V3
+### [/V3](V3)
