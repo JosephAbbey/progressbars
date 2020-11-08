@@ -21,6 +21,7 @@ var bar1 = new progressBar({
   time: 800,
 });
 bar1.draw();
+
 var bar2 = new progressBar({
   where: 'canvas2',
   type: 'line',
