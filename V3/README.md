@@ -1,6 +1,6 @@
 # progressbars
 
-Open source progress bar library made with p5.js.
+Open source progress bar library migrated to not use p5.js.
 
 ## Usage:
 
