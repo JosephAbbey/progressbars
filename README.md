@@ -9,3 +9,5 @@ Check each version for usage instructions.
 
 ## Versions:
 ### [V3](./V3)
+### [V2](./V2)
+### [V1](./V1)
