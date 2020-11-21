@@ -5,7 +5,7 @@ Open source progress bar library migrated to not use p5.js.
 ## Usage:
 
 ```
-<script src="https://josephabbey.github.io/progressbars/V3/progressbars.min.js"></script>
+<script src="https://progressbars.js.org/progressbars/V3/progressbars.min.js"></script>
 ```
 
 ## Examples:
