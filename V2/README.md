@@ -6,7 +6,7 @@ Open source progress bar library made with p5.js.
 
 ```
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-<script src="https://josephabbey.github.io/progressbars/V2/progressbars.min.js"></script>
+<script src="https://progressbars.js.org/V2/progressbars.min.js"></script>
 ```
 
 ## Examples:
