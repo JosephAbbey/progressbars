@@ -1,0 +1,32 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <div id="canvas1"></div>
+        <div id="canvas2"></div>
+        <script src="progressbars.js"></script>
+        <script>
+            var bar1 = new progressBar({
+                where: "canvas1",
+                type: "circle",
+                background: new color(255),
+                color1: new color("#ff0000"),
+                color2: new color(00, 00, 255),
+                endval: 80,
+                time: 800,
+            });
+            bar1.draw();
+
+            var gif1 = new loadingGIF({
+                where: "canvas2",
+                type: "line",
+                background: new color(255),
+                color: new color(230),
+            });
+            gif1.show();
+        </script>
+    </body>
+</html>
